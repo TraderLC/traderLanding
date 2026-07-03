@@ -2,19 +2,24 @@
 // Mobile: section px-5 py-10, form px-5 py-6 gap-8, heading 24px, subtitle 16px, image h-592.
 // Desktop: px-[100px] py-[100px], form p-[48px] gap-[48px], heading 32px, image h-846.
 
-const inputBase = 'w-full rounded-[8px] border border-[#E5E7EB] bg-[#F8F8F9] h-[52px] flex items-center px-[16px] font-harmony text-[14px] leading-[20px] text-primary-dark placeholder:text-[#9CA3AF] outline-none focus:border-secondary'
+import Image from 'next/image'
+
+const inputBase = 'w-full rounded-[8px] border border-[#E5E7EB] bg-[#F8F8F9] h-[52px] flex items-center px-[16px] font-harmony text-[14px] leading-[20px] text-primary-dark placeholder:text-[#6B7280] outline-none focus:border-secondary'
 const labelBase = 'font-harmony text-[16px] font-medium leading-[24px] text-[#1C1C1C]'
 
+const slugify = (label: string) => label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+
 function SelectField({ label, placeholder }: { label: string; placeholder: string }) {
+  const id = `field-${slugify(label)}`
   return (
     <div className="flex flex-col gap-[8px]">
-      <label className={labelBase}>{label}</label>
+      <label htmlFor={id} className={labelBase}>{label}</label>
       <div className="relative">
-        <select className={`${inputBase} appearance-none pr-[44px] cursor-pointer bg-[#F8F8F9]`}>
-          <option value="" disabled selected className="text-[#9CA3AF]">{placeholder}</option>
+        <select id={id} defaultValue="" className={`${inputBase} appearance-none pr-[44px] cursor-pointer bg-[#F8F8F9]`}>
+          <option value="" disabled className="text-[#6B7280]">{placeholder}</option>
         </select>
         <div className="pointer-events-none absolute right-[16px] top-1/2 -translate-y-1/2 size-[20px]">
-          <img src="/quote/chevron.svg" alt="" className="h-full w-full" />
+          <Image src="/quote/chevron.svg" alt="" width={20} height={20} className="h-full w-full" />
         </div>
       </div>
     </div>
@@ -22,10 +27,11 @@ function SelectField({ label, placeholder }: { label: string; placeholder: strin
 }
 
 function TextField({ label, placeholder }: { label: string; placeholder: string }) {
+  const id = `field-${slugify(label)}`
   return (
     <div className="flex flex-col gap-[8px]">
-      <label className={labelBase}>{label}</label>
-      <input type="text" placeholder={placeholder} className={inputBase} />
+      <label htmlFor={id} className={labelBase}>{label}</label>
+      <input id={id} type="text" placeholder={placeholder} className={inputBase} />
     </div>
   )
 }
@@ -73,10 +79,12 @@ export default function Pricing() {
 
           {/* Image card — second on mobile, first on desktop */}
           <div className="order-2 relative h-[592px] overflow-hidden rounded-[20px] shrink-0 lg:order-1 lg:h-[846px] lg:w-[505px]">
-            <img
+            <Image
               src="/quote/ship.jpg"
               alt="Container ship viewed from above"
-              className="h-full w-full object-cover"
+              fill
+              sizes="(min-width: 1024px) 505px, 100vw"
+              className="object-cover"
             />
             <span
               className="font-aeonik absolute font-bold text-primary"

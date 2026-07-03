@@ -1,6 +1,7 @@
 // Figma 593:5578 — 1440×988 desktop, 393px mobile (node 772:49)
 // Desktop: x=205 y=80 w=1030. Card 01: 1030×220. Cards 02+03: 505×388.
 // Mobile: px=20, heading 28px centered, cards px=24 py=32, gap=24, number on top, gap=56.
+import Image from 'next/image'
 
 export default function HowItWorks() {
   return (
@@ -10,7 +11,7 @@ export default function HowItWorks() {
       <div aria-hidden className="pointer-events-none -translate-x-1/2 absolute bottom-[208.65px] hidden lg:flex h-[1090.718px] items-center justify-center left-[calc(87.5%-25.78px)] w-[1050.789px]">
         <div className="flex-none rotate-[-128.37deg]">
           <div className="h-[640px] relative w-[884.475px]">
-            <img alt="" className="absolute block inset-0 max-w-none size-full" src="/how/lines.svg" />
+            <Image alt="" fill className="block max-w-none" src="/how/lines.svg" />
           </div>
         </div>
       </div>
@@ -32,10 +33,10 @@ export default function HowItWorks() {
             <div className="flex flex-col gap-14 px-6 py-8 lg:hidden">
               <div className="inline-grid place-items-start leading-[0]"
                 style={{ gridTemplateColumns: 'max-content', gridTemplateRows: 'max-content' }}>
-                <img src="/how/num-01-bg.svg" alt="" className="relative"
-                  style={{ gridArea: '1/1', width: 65.288, height: 53.383, marginLeft: 2.62, marginTop: 2.62 }} />
-                <img src="/how/num-01.svg" alt="" className="relative"
-                  style={{ gridArea: '1/1', width: 65.288, height: 53.383 }} />
+                <Image src="/how/num-01-bg.svg" alt="" width={65} height={53} className="relative h-[53px] w-[65px]"
+                  style={{ gridArea: '1/1', marginLeft: 2.62, marginTop: 2.62 }} />
+                <Image src="/how/num-01.svg" alt="" width={65} height={53} className="relative h-[53px] w-[65px]"
+                  style={{ gridArea: '1/1' }} />
               </div>
               <div className="flex flex-col gap-4">
                 <p className="font-harmony text-[24px] font-bold leading-normal text-white">Create your account</p>
@@ -47,10 +48,10 @@ export default function HowItWorks() {
 
             {/* Desktop layout */}
             <div aria-hidden className="pointer-events-none hidden lg:block">
-              <img src="/how/num-01-bg.svg" alt="" className="absolute max-w-none"
-                style={{ left: 57, top: 55, width: 249.475, height: 203.984 }} />
-              <img src="/how/num-01.svg" alt="" className="absolute max-w-none"
-                style={{ left: 67, top: 65, width: 249.475, height: 203.984 }} />
+              <Image src="/how/num-01-bg.svg" alt="" width={249} height={204} className="absolute h-[204px] w-[249px] max-w-none"
+                style={{ left: 57, top: 55 }} />
+              <Image src="/how/num-01.svg" alt="" width={249} height={204} className="absolute h-[204px] w-[249px] max-w-none"
+                style={{ left: 67, top: 65 }} />
             </div>
             <div className="hidden lg:flex flex-col gap-[16px] absolute"
               style={{ left: 440, top: 55 }}>
@@ -71,10 +72,10 @@ export default function HowItWorks() {
               <div className="flex flex-col gap-14 px-6 py-8 lg:hidden">
                 <div className="inline-grid place-items-start leading-[0]"
                   style={{ gridTemplateColumns: 'max-content', gridTemplateRows: 'max-content' }}>
-                  <img src="/how/num-02-bg.svg" alt="" className="relative"
-                    style={{ gridArea: '1/1', width: 78.05, height: 52.989, marginLeft: 3.01, marginTop: 3.01 }} />
-                  <img src="/how/num-02.svg" alt="" className="relative"
-                    style={{ gridArea: '1/1', width: 78.05, height: 52.989 }} />
+                  <Image src="/how/num-02-bg.svg" alt="" width={78} height={53} className="relative h-[53px] w-[78px]"
+                    style={{ gridArea: '1/1', marginLeft: 3.01, marginTop: 3.01 }} />
+                  <Image src="/how/num-02.svg" alt="" width={78} height={53} className="relative h-[53px] w-[78px]"
+                    style={{ gridArea: '1/1' }} />
                 </div>
                 <div className="flex flex-col gap-4">
                   <p className="font-harmony text-[24px] font-bold leading-normal text-white">Create &amp; Review Shipment</p>
@@ -86,10 +87,10 @@ export default function HowItWorks() {
 
               {/* Desktop layout */}
               <div aria-hidden className="pointer-events-none hidden lg:block">
-                <img src="/how/num-02-bg.svg" alt="" className="absolute max-w-none"
-                  style={{ left: 56, top: -20, width: 251.306, height: 170.615 }} />
-                <img src="/how/num-02.svg" alt="" className="absolute max-w-none"
-                  style={{ left: 65.69, top: -10.31, width: 251.306, height: 170.615 }} />
+                <Image src="/how/num-02-bg.svg" alt="" width={251} height={171} className="absolute h-[171px] w-[251px] max-w-none"
+                  style={{ left: 56, top: -20 }} />
+                <Image src="/how/num-02.svg" alt="" width={251} height={171} className="absolute h-[171px] w-[251px] max-w-none"
+                  style={{ left: 65.69, top: -10.31 }} />
               </div>
               <div className="hidden lg:flex flex-col gap-[16px] absolute"
                 style={{ left: 32, top: 224.31 }}>
@@ -107,10 +108,10 @@ export default function HowItWorks() {
               <div className="flex flex-col gap-14 px-6 py-8 lg:hidden">
                 <div className="inline-grid place-items-start leading-[0]"
                   style={{ gridTemplateColumns: 'max-content', gridTemplateRows: 'max-content' }}>
-                  <img src="/how/num-03-bg.svg" alt="" className="relative"
-                    style={{ gridArea: '1/1', width: 77.924, height: 52.899, marginLeft: 3.1, marginTop: 3.1 }} />
-                  <img src="/how/num-03.svg" alt="" className="relative"
-                    style={{ gridArea: '1/1', width: 77.924, height: 52.899 }} />
+                  <Image src="/how/num-03-bg.svg" alt="" width={78} height={53} className="relative h-[53px] w-[78px]"
+                    style={{ gridArea: '1/1', marginLeft: 3.1, marginTop: 3.1 }} />
+                  <Image src="/how/num-03.svg" alt="" width={78} height={53} className="relative h-[53px] w-[78px]"
+                    style={{ gridArea: '1/1' }} />
                 </div>
                 <div className="flex flex-col gap-4">
                   <p className="font-harmony text-[24px] font-bold leading-normal text-white">Receive your goods</p>
@@ -122,10 +123,10 @@ export default function HowItWorks() {
 
               {/* Desktop layout */}
               <div aria-hidden className="pointer-events-none hidden lg:block">
-                <img src="/how/num-03-bg.svg" alt="" className="absolute max-w-none"
-                  style={{ left: 56, top: -20, width: 251.32, height: 170.61 }} />
-                <img src="/how/num-03.svg" alt="" className="absolute max-w-none"
-                  style={{ left: 66, top: -10, width: 251.32, height: 170.61 }} />
+                <Image src="/how/num-03-bg.svg" alt="" width={251} height={171} className="absolute h-[171px] w-[251px] max-w-none"
+                  style={{ left: 56, top: -20 }} />
+                <Image src="/how/num-03.svg" alt="" width={251} height={171} className="absolute h-[171px] w-[251px] max-w-none"
+                  style={{ left: 66, top: -10 }} />
               </div>
               <div className="hidden lg:flex flex-col gap-[16px] absolute"
                 style={{ left: 32, top: 224.61 }}>
