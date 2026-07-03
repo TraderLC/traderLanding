@@ -2,6 +2,7 @@
 // Mobile: no CTA, heading 28px/38lh, subtitle 16px/24lh, gap-4 between them.
 // Mobile photos: horizontal strip pl-5, 253/191/158px wide × 238px tall, gap-[10px], overflows right.
 // Desktop: CTA visible, heading 48px, photos row h-[475px].
+import Image from 'next/image'
 
 export default function AppDownload() {
   return (
@@ -31,17 +32,17 @@ export default function AppDownload() {
 
         {/* Desktop photo row */}
         <div className="hidden mt-[80px] lg:flex justify-center gap-[20px] pb-[80px]">
-          <img src="/about/app-port.jpg" alt="Container ship and port cranes" className="h-[475px] w-[505px] rounded-[20px] object-cover" />
-          <img src="/about/app-truck.jpg" alt="Freight truck at a container yard at dusk" className="h-[475px] w-[381px] rounded-[20px] object-cover" />
-          <img src="/about/app-containers.jpg" alt="Aerial view of stacked orange containers" className="h-[475px] w-[315px] rounded-[20px] object-cover" />
+          <Image src="/about/app-port.jpg" alt="Container ship and port cranes" width={505} height={475} className="h-[475px] w-[505px] rounded-[20px] object-cover" />
+          <Image src="/about/app-truck.jpg" alt="Freight truck at a container yard at dusk" width={381} height={475} className="h-[475px] w-[381px] rounded-[20px] object-cover" />
+          <Image src="/about/app-containers.jpg" alt="Aerial view of stacked orange containers" width={315} height={475} className="h-[475px] w-[315px] rounded-[20px] object-cover" />
         </div>
       </div>
 
       {/* Mobile photo strip — starts at x=20px, overflows right edge */}
       <div className="mt-10 flex gap-[10px] overflow-x-auto pl-5 pb-10 scrollbar-none lg:hidden">
-        <img src="/about/app-port.jpg" alt="Container ship and port cranes" className="h-[238px] w-[253px] shrink-0 rounded-[20px] object-cover" />
-        <img src="/about/app-truck.jpg" alt="Freight truck at a container yard at dusk" className="h-[238px] w-[191px] shrink-0 rounded-[20px] object-cover" />
-        <img src="/about/app-containers.jpg" alt="Aerial view of stacked orange containers" className="h-[238px] w-[158px] shrink-0 rounded-[20px] object-cover" />
+        <Image src="/about/app-port.jpg" alt="Container ship and port cranes" width={253} height={238} className="h-[238px] w-[253px] shrink-0 rounded-[20px] object-cover" />
+        <Image src="/about/app-truck.jpg" alt="Freight truck at a container yard at dusk" width={191} height={238} className="h-[238px] w-[191px] shrink-0 rounded-[20px] object-cover" />
+        <Image src="/about/app-containers.jpg" alt="Aerial view of stacked orange containers" width={158} height={238} className="h-[238px] w-[158px] shrink-0 rounded-[20px] object-cover" />
         <div className="shrink-0 w-5" aria-hidden />
       </div>
 
