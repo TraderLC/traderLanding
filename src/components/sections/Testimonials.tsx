@@ -4,6 +4,7 @@
 // Mobile 791:49 — white card px-20 py-24, no overlap, items px-16 py-20, q 16px bold, a 14px, chevron 20px.
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 const faqs = [
   {
@@ -96,8 +97,8 @@ export default function Testimonials() {
                       {item.q}
                     </span>
                     {/* Chevron — 20px mobile, 32px desktop */}
-                    <span className={`mt-0.5 size-5 shrink-0 transition-transform duration-200 lg:mt-1 lg:size-8 ${isOpen ? 'rotate-180' : ''}`}>
-                      <img src="/faq/chevron.svg" alt="" className="h-full w-full" />
+                    <span className={`relative mt-0.5 size-5 shrink-0 transition-transform duration-200 lg:mt-1 lg:size-8 ${isOpen ? 'rotate-180' : ''}`}>
+                      <Image src="/faq/chevron.svg" alt="" fill className="h-full w-full" />
                     </span>
                   </button>
 

@@ -1,34 +1,6 @@
 @import "tailwindcss";
 
-/* Brand fonts — self-hosted from /public/fonts */
-@font-face {
-  font-family: "HarmonyOS Sans";
-  src: url("/fonts/HarmonyOS_Sans_Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "HarmonyOS Sans";
-  src: url("/fonts/HarmonyOS_Sans_Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "HarmonyOS Sans";
-  src: url("/fonts/HarmonyOS_Sans_Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Aeonik TRIAL";
-  src: url("/fonts/Aeonik_TRIAL_Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+/* Brand fonts — self-hosted & optimized via next/font/local (see src/app/layout.tsx) */
 
 /* Cargoport brand tokens */
 @theme inline {
@@ -41,8 +13,8 @@
   --color-accent-green:   #309371;
   --color-accent-orange:  #FF6F3C;
 
-  --font-harmony: "HarmonyOS Sans", sans-serif;
-  --font-aeonik:  "Aeonik TRIAL", "HarmonyOS Sans", sans-serif;
+  --font-harmony: var(--font-harmony-local), sans-serif;
+  --font-aeonik:  var(--font-aeonik-local), var(--font-harmony-local), sans-serif;
 }
 
 html, body {

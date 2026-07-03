@@ -1,6 +1,7 @@
 // Desktop 585:17640 | Mobile 765:8306
 // Mobile: stacked cards, 20px gutters, rounded-24, pt-32 px-32 gap-32, img h-290.
 // Desktop: 2×2 grid, 640px cards, rounded-40, pt-48 px-52, img h-414.
+import Image from 'next/image'
 
 export default function Features() {
   const cardTextCls = 'flex flex-col gap-3 lg:gap-4'
@@ -33,8 +34,8 @@ export default function Features() {
               <p className={bodyCls}>Leave the entire importation process to us. We pick up your goods from the supplier, handle port clearance, store your cargo, and deliver nationwide.</p>
             </div>
             <div className={`${imgWrapMobile} ${imgWrapDesktop}`}>
-              <img src="/features/card1.jpg" alt="Workers loading shipping containers at port"
-                className="absolute left-0 w-full max-w-none" style={{ height: '174.62%', top: '-54.22%' }} />
+              <Image src="/features/card1.jpg" alt="Workers loading shipping containers at port" fill
+                sizes="(min-width: 1024px) 640px, 100vw" className="object-cover" />
             </div>
           </div>
 
@@ -45,8 +46,8 @@ export default function Features() {
               <p className={bodyCls}>Monitor your shipment from China to Nigeria on your dashboard: factory pickup, sea transit, port arrival, and final delivery. Get instant alerts on every movement until your goods reach you.</p>
             </div>
             <div className={`${imgWrapMobile} ${imgWrapDesktop}`}>
-              <img src="/features/card3.jpg" alt="Woman tracking shipment on phone and tablet"
-                className="h-full w-full object-cover" />
+              <Image src="/features/card3.jpg" alt="Woman tracking shipment on phone and tablet" fill
+                sizes="(min-width: 1024px) 640px, 100vw" className="object-cover" />
             </div>
           </div>
 
@@ -57,8 +58,8 @@ export default function Features() {
               <p className={bodyCls}>{"No need to visit the port or deal with customs yourself. Just send us your receipt and product images, and we'll handle Nigerian customs clearance for you."}</p>
             </div>
             <div className={`${imgWrapMobile} ${imgWrapDesktop}`}>
-              <img src="/features/card2.jpg" alt="Customs workers reviewing documents at a warehouse"
-                className="h-full w-full object-cover" />
+              <Image src="/features/card2.jpg" alt="Customs workers reviewing documents at a warehouse" fill
+                sizes="(min-width: 1024px) 640px, 100vw" className="object-cover" />
             </div>
           </div>
 
@@ -71,7 +72,7 @@ export default function Features() {
             <div aria-hidden className="pointer-events-none absolute lg:hidden flex items-center justify-center"
               style={{ left: 136.18, top: 77.28, width: 320.1, height: 320.1 }}>
               <div style={{ transform: 'rotate(-29.98deg)' }}>
-                <img src="/features/m-bg.png" alt="" style={{ width: 234.35, height: 234.35, opacity: 0.1 }} />
+                <Image src="/features/m-bg.png" alt="" width={234} height={234} style={{ opacity: 0.1, width: 234, height: 234 }} />
               </div>
             </div>
 
@@ -79,7 +80,7 @@ export default function Features() {
             <div aria-hidden className="pointer-events-none absolute hidden lg:flex items-center justify-center"
               style={{ left: 203, top: 49, width: 622, height: 622 }}>
               <div style={{ transform: 'rotate(-29.98deg)' }}>
-                <img src="/features/card4-bg.png" alt="" style={{ width: 455, height: 455, opacity: 0.1 }} />
+                <Image src="/features/card4-bg.png" alt="" width={455} height={455} style={{ opacity: 0.1, width: 455, height: 455 }} />
               </div>
             </div>
 
@@ -105,30 +106,30 @@ export default function Features() {
                  Naira (image 25): left=27 top=154 w=112 h=107
                  Arrow: container left=76.61 top=261.04 w=53.98 h=57.90, inner rotate(-38.32) w=27.93 h=51.72
                  USDC coins: left=166 top=162 w=262 h=217 */}
-            <img src="/features/m-naira.png" alt="" aria-hidden
+            <Image src="/features/m-naira.png" alt="" aria-hidden width={112} height={107}
               className="pointer-events-none absolute lg:hidden"
               style={{ left: 27, top: 154, width: 112, height: 107 }} />
             <div aria-hidden className="pointer-events-none absolute lg:hidden flex items-center justify-center"
               style={{ left: 76.61, top: 261.04, width: 53.98, height: 57.9 }}>
-              <div style={{ transform: 'rotate(-38.32deg)', width: 27.93, height: 51.72 }}>
-                <img src="/features/m-arrow.svg" alt="" className="h-full w-full" />
+              <div style={{ transform: 'rotate(-38.32deg)', width: 28, height: 52, position: 'relative' }}>
+                <Image src="/features/m-arrow.svg" alt="" fill className="h-full w-full" />
               </div>
             </div>
-            <img src="/features/m-coins.png" alt="Naira and USDC payment options"
+            <Image src="/features/m-coins.png" alt="Naira and USDC payment options" width={262} height={217}
               className="pointer-events-none absolute lg:hidden"
               style={{ left: 166, top: 162, width: 262, height: 217 }} />
 
             {/* ── Desktop coins ── */}
-            <img src="/features/card4-naira.png" alt="" aria-hidden
+            <Image src="/features/card4-naira.png" alt="" aria-hidden width={202} height={193}
               className="pointer-events-none absolute hidden lg:block"
               style={{ left: 27, top: 234, width: 202, height: 193 }} />
             <div aria-hidden className="pointer-events-none absolute hidden lg:flex items-center justify-center"
               style={{ left: 116.68, top: 427.49, width: 97.579, height: 104.657 }}>
-              <div style={{ transform: 'rotate(-38.32deg)', width: 50.487, height: 93.494 }}>
-                <img src="/features/card4-arrow.svg" alt="" className="h-full w-full" />
+              <div style={{ transform: 'rotate(-38.32deg)', width: 50, height: 93, position: 'relative' }}>
+                <Image src="/features/card4-arrow.svg" alt="" fill className="h-full w-full" />
               </div>
             </div>
-            <img src="/features/card4-coins.png" alt="Naira and USDC payment options"
+            <Image src="/features/card4-coins.png" alt="Naira and USDC payment options" width={473} height={392}
               className="pointer-events-none absolute hidden lg:block"
               style={{ left: 166, top: 248, width: 473, height: 392 }} />
           </div>
