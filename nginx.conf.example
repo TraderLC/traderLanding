@@ -1,0 +1,112 @@
+# ==============================================================================
+# Nginx Configuration for traderlc.com (Landing Page Frontend)
+# Target on VPS: /etc/nginx/sites-available/traderlc.com
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. HTTP Server Block (Port 80) -> Redirect HTTP to HTTPS
+# ------------------------------------------------------------------------------
+server {
+    listen 80;
+    listen [::]:80;
+    server_name traderlc.com www.traderlc.com;
+
+    # Let's Encrypt / Certbot ACME domain verification
+    location /.well-known/acme-challenge/ {
+        root /var/www/html;
+        allow all;
+    }
+
+    # Redirect all HTTP traffic to HTTPS
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
+
+# ------------------------------------------------------------------------------
+# 2. HTTPS Server Block (Port 443) -> Proxy to Frontend (Port 7100)
+# ------------------------------------------------------------------------------
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name traderlc.com www.traderlc.com;
+
+    # SSL Certificates (managed by Certbot)
+    # ssl_certificate /etc/letsencrypt/live/traderlc.com/fullchain.pem;
+    # ssl_certificate_key /etc/letsencrypt/live/traderlc.com/privkey.pem;
+
+    # Modern SSL configuration
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
+    ssl_prefer_server_ciphers off;
+    ssl_session_timeout 1d;
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_tickets off;
+
+    # Client Request & Body Limits
+    client_max_body_size 20M;
+
+    # Gzip Compression
+    gzip on;
+    gzip_proxied any;
+    gzip_types
+        text/plain
+        text/css
+        application/json
+        application/javascript
+        text/xml
+        application/xml
+        application/xml+rss
+        text/javascript
+        image/svg+xml;
+    gzip_vary on;
+
+    # --------------------------------------------------------------------------
+    # NEXT.JS STATIC ASSETS: Cache immutable build assets for 1 year
+    # --------------------------------------------------------------------------
+    location /_next/static/ {
+        proxy_pass http://127.0.0.1:7100;
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+        expires 365d;
+        access_log off;
+    }
+
+    # --------------------------------------------------------------------------
+    # NEXT.JS OPTIMIZED IMAGES
+    # --------------------------------------------------------------------------
+    location /_next/image {
+        proxy_pass http://127.0.0.1:7100;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 60s;
+    }
+
+    # --------------------------------------------------------------------------
+    # FRONTEND LANDING PAGE: Proxy all web requests to Next.js (Port 7100)
+    # --------------------------------------------------------------------------
+    location / {
+        proxy_pass http://127.0.0.1:7100;
+        proxy_http_version 1.1;
+
+        # WebSocket & Server-Sent Events (SSE) Streaming support
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+
+        # Standard Proxy Headers
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+
+        # Disable buffering for Next.js App Router streaming responses
+        proxy_buffering off;
+        proxy_read_timeout 60s;
+        proxy_connect_timeout 60s;
+    }
+}

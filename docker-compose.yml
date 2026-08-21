@@ -1,0 +1,49 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-https://traderlc.com}
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://traderlc.com/api}
+    image: traderlanding:latest
+    container_name: traderlanding_app
+    restart: ${RESTART_POLICY:-always}
+    ports:
+      - "${PORT:-7100}:${INTERNAL_PORT:-7000}"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - PORT=${INTERNAL_PORT:-7000}
+      - HOSTNAME=${HOSTNAME:-0.0.0.0}
+      - NODE_OPTIONS=${NODE_OPTIONS:---max-old-space-size=384}
+    deploy:
+      resources:
+        limits:
+          memory: ${MEM_LIMIT:-512M}
+        reservations:
+          memory: ${MEM_RESERVATION:-128M}
+    mem_limit: ${MEM_LIMIT:-512M}
+    mem_reservation: ${MEM_RESERVATION:-128M}
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:7000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - default
+      - traderlc_network
+
+networks:
+  default:
+  traderlc_network:
+    external: true
+    name: ${TRADERLC_NETWORK:-traderlc_network}
