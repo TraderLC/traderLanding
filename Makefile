@@ -21,6 +21,8 @@ build: ## Build the Docker image
 	docker compose build
 
 up: setup-env ## Build and start the container in detached mode
+	@echo "Ensuring traderlc_network exists..."
+	@docker network create traderlc_network 2>/dev/null || true
 	@echo "Starting container on port 7100 (internal 7000)..."
 	docker compose up -d --build
 
@@ -48,8 +50,10 @@ deploy: setup-env ## Pull latest changes, rebuild, and redeploy on VPS
 	@echo "Starting automated deployment..."
 	@if [ -d .git ]; then \
 		echo "Pulling latest code..."; \
-		git pull origin master || git pull; \
+		git pull origin main || git pull origin master || git pull; \
 	fi
+	@echo "Ensuring traderlc_network exists..."
+	@docker network create traderlc_network 2>/dev/null || true
 	@echo "Building and updating container..."
 	docker compose up -d --build --remove-orphans
 	@echo "Cleaning up dangling images..."

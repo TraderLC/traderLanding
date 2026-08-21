@@ -3,10 +3,13 @@ set -e
 
 echo "🚀 Starting deployment..."
 
+# Ensure traderlc_network exists
+docker network create traderlc_network 2>/dev/null || true
+
 # Pull latest changes from git repository
 if [ -d .git ]; then
     echo "📥 Pulling latest git changes..."
-    git pull origin main || git pull
+    git pull origin main || git pull origin master || git pull
 fi
 
 # Build and restart containers with zero/minimal downtime

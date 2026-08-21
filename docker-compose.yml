@@ -45,5 +45,5 @@ services:
 networks:
   default:
   traderlc_network:
-    external: true
     name: ${TRADERLC_NETWORK:-traderlc_network}
+    driver: bridge
