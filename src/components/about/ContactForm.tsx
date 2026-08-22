@@ -77,7 +77,7 @@ export default function ContactForm() {
       </div>
 
       {/* Right — form */}
-      <form onSubmit={handleSubmit} className="relative mt-10 flex flex-col gap-[56px] lg:absolute lg:left-[638px] lg:top-[56px] lg:mt-0 lg:w-[530px]">
+      <form onSubmit={handleSubmit} className="relative mt-10 flex w-full flex-col gap-[56px] lg:absolute lg:left-[638px] lg:top-[56px] lg:mt-0 lg:w-[530px]">
         <div className="flex flex-col gap-[24px]">
           <div className="flex flex-col gap-[8px]">
             <label htmlFor="about-contact-name" className={label}>Name</label>

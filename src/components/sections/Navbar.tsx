@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 const links = [
@@ -11,15 +12,6 @@ const links = [
   { label: 'Contact',      href: '/about#contact' },
   { label: 'FAQ',          href: '/about#faq' },
 ]
-
-const Logo = ({ size = 41 }: { size?: number }) => (
-  <svg width={size} height={Math.round(size * 40 / 41)} viewBox="0 0 41 40" fill="none">
-    <path d="M20.5 10.625C20.5 15.8027 16.2855 20 11.0867 20H1.67347V10.625C1.67347 5.44732 5.88793 1.25 11.0867 1.25C16.2855 1.25 20.5 5.44732 20.5 10.625Z" fill="#1890FF"/>
-    <path d="M20.5 29.375C20.5 24.1973 24.7145 20 29.9133 20H39.3265V29.375C39.3265 34.5527 35.1121 38.75 29.9133 38.75C24.7145 38.75 20.5 34.5527 20.5 29.375Z" fill="#1890FF"/>
-    <path d="M1.67347 29.375C1.67347 34.5527 5.88793 38.75 11.0867 38.75H20.5V29.375C20.5 24.1973 16.2855 20 11.0867 20C5.88793 20 1.67347 24.1973 1.67347 29.375Z" fill="#1890FF"/>
-    <path d="M39.3265 10.625C39.3265 5.44732 35.1121 1.25 29.9133 1.25H20.5V10.625C20.5 15.8027 24.7145 20 29.9133 20C35.1121 20 39.3265 15.8027 39.3265 10.625Z" fill="#1890FF"/>
-  </svg>
-)
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -38,11 +30,8 @@ export default function Navbar() {
       {/* Desktop */}
       <div className="hidden md:flex items-center justify-between max-w-[1440px] mx-auto px-25 py-6">
 
-        <Link href="/" className="flex items-center gap-[8.5px]">
-          <Logo size={41} />
-          <span className="font-aeonik font-bold text-primary whitespace-nowrap" style={{ fontSize: '21.862px', lineHeight: '1.1' }}>
-            Trader LC
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image src="/logo.svg" alt="Trader" width={182} height={32} priority className="h-8 w-auto" />
         </Link>
 
         <nav className="flex items-center gap-8">
@@ -67,9 +56,8 @@ export default function Navbar() {
 
       {/* Mobile header */}
       <div className="md:hidden flex items-center justify-between max-w-[1440px] mx-auto px-6 py-4">
-        <Link href="/" className="flex items-center gap-2">
-          <Logo size={32} />
-          <span className="font-aeonik font-bold text-primary text-base">Trader LC</span>
+        <Link href="/" className="flex items-center">
+          <Image src="/logo.svg" alt="Trader" width={120} height={21} priority className="h-5 w-auto" />
         </Link>
         <button className="p-2 rounded-lg text-gray-500 hover:bg-gray-100 transition-colors"
           onClick={() => setOpen(v => !v)}
