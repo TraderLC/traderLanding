@@ -90,7 +90,7 @@ export default function Pricing() {
               className="font-aeonik absolute font-bold text-primary"
               style={{ top: '7.43%', left: '35.98%', fontSize: '21.862px', lineHeight: '1.1', whiteSpace: 'nowrap' }}
             >
-              Trader LC
+              Trader
             </span>
           </div>
 

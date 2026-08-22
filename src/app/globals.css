@@ -2,7 +2,7 @@
 
 /* Brand fonts — self-hosted & optimized via next/font/local (see src/app/layout.tsx) */
 
-/* Cargoport brand tokens */
+/* Trader brand tokens */
 @theme inline {
   --color-primary:        #355C7B;
   --color-primary-light:  #F5F7F8;
