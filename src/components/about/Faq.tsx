@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: 'How much does it cost to ship from China to Nigeria?',
-    a: 'Shipping from China to Nigeria typically costs $330 per 1 CBM (cubic meter). Trader Logistic and Clearing ensures transparent pricing with no hidden charges.',
+    a: 'Shipping from China to Nigeria typically costs $350 per 1 CBM (cubic meter). Trader Logistic and Clearing ensures transparent pricing with no hidden charges.',
   },
   {
     q: 'What is USDC, and how do I pay with it?',
