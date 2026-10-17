@@ -38,7 +38,7 @@ export default function Hero() {
                 {' smarter from China to Nigeria.'}
               </h1>
               <p className="font-harmony text-[16px] font-medium leading-[24px] text-[#152531] lg:w-[519px] lg:text-[18px] lg:leading-[32px]">
-                {'We handle everything from pickup to delivery, with real-time tracking and flexible payments, including '}
+                {'We handle everything from shipping to delivery, with real-time tracking and flexible payments, including '}
                 <span className="font-black italic text-secondary">stablecoins</span>.
               </p>
             </div>

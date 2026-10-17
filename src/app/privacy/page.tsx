@@ -180,7 +180,7 @@ const sections: LegalSection[] = [
         list: [
           'Trader Logistic and Clearing Limited',
           'Address: No 5 Igboukwu Cresent Coker',
-          'Email: Traderlogisticsclearing@gmail.com',
+          'Email: hello@traderlc.com',
           'Phone: 08038277977',
         ],
       },
