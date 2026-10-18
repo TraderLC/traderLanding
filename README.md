@@ -1,10 +1,16 @@
 # TraderLC Landing Page
 
+Marketing website for TraderLC — a cargo shipping platform connecting China to Nigeria.
+
 Modern landing page for [TraderLC](https://traderlc.com), built with Next.js 16 (App Router), React 19, Tailwind CSS, and Framer Motion.
 
----
+## Tech Stack
 
-## 🚀 Quick Start (Local Development)
+- **Framework:** Next.js 16 (App Router + Turbopack)
+- **Styling:** Tailwind CSS
+- **Fonts:** Aeonik, HarmonyOS Sans
+
+## Quick Start (Local Development)
 
 ```bash
 # Install dependencies
@@ -16,9 +22,24 @@ npm run dev
 
 Visit `http://localhost:3000` in your browser.
 
----
+## Environment Variables
 
-## 🐳 Docker Deployment (VPS)
+Create a `.env.local` file:
+
+```env
+NEXT_PUBLIC_API_URL=https://traderlcbackend-production.up.railway.app/api
+```
+
+## Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Homepage with hero, features, pricing, FAQ, and CTA |
+| `/about` | About Us page |
+| `/terms` | Terms of Service |
+| `/privacy` | Privacy Policy |
+
+## Docker Deployment (VPS)
 
 ### Port & Network Architecture
 
@@ -29,8 +50,6 @@ Visit `http://localhost:3000` in your browser.
 | **Docker Network** | `traderlc_network` |
 | **RAM Limit** | `512MB` (with 128MB reservation) |
 | **Restart Policy** | `always` |
-
----
 
 ### Step-by-Step VPS Deployment
 
@@ -60,9 +79,7 @@ make setup-nginx
 sudo certbot --nginx -d traderlc.com -d www.traderlc.com
 ```
 
----
-
-## 🛠️ Makefile Commands
+## Makefile Commands
 
 | Command | Action |
 | :--- | :--- |
@@ -76,11 +93,24 @@ sudo certbot --nginx -d traderlc.com -d www.traderlc.com
 | `make shell` | Open an interactive shell inside the container |
 | `make setup-nginx` | Install Nginx configuration on VPS |
 
----
-
-## 🔄 Updating in Production
+## Updating in Production
 
 To deploy code updates in production:
 ```bash
 make deploy
 ```
+
+## Scripts
+
+```bash
+npm run dev      # Start dev server
+npm run build    # Production build
+npm start        # Start production server
+npm run lint     # Run ESLint
+```
+
+## Deployment
+
+Deployed via GitHub repository: [TraderLC/traderLanding](https://github.com/TraderLC/traderLanding)
+
+Set `NEXT_PUBLIC_API_URL` as an environment variable in your hosting platform.

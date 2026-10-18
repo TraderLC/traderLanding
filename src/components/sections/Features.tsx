@@ -17,7 +17,7 @@ export default function Features() {
         {/* Heading */}
         <div className="mx-auto mb-10 flex max-w-[735px] flex-col gap-4 text-center lg:mb-[66px]">
           <h2 className="font-harmony text-[28px] font-bold leading-[38px] text-primary lg:text-[48px] lg:leading-[64px]">
-            Built for Nigerian SMEs importing from China
+            Built for Nigerian Businesses importing from China
           </h2>
           <p className="font-harmony text-[16px] font-medium leading-6 text-primary-dark">
             {"Whether you're importing for the first time or running a growing business, Trader gives you an affordable and transparent way to import goods from China to Nigeria."}
@@ -31,7 +31,7 @@ export default function Features() {
           <div className="relative flex flex-col gap-8 overflow-hidden rounded-3xl bg-primary-light px-8 pt-8 lg:h-[640px] lg:gap-0 lg:rounded-[40px] lg:px-0 lg:pt-0">
             <div className={`${cardTextCls} lg:px-[52px] lg:pt-[48px]`}>
               <p className={titleCls}>We handle everything</p>
-              <p className={bodyCls}>Leave the entire importation process to us. We pick up your goods from the supplier, handle port clearance, store your cargo, and deliver nationwide.</p>
+              <p className={bodyCls}>Leave the hard part to us. We receive your goods from the supplier, manage port clearance, store your cargo, and deliver nationwide.</p>
             </div>
             <div className={`${imgWrapMobile} ${imgWrapDesktop}`}>
               <Image src="/features/card1.jpg" alt="Workers loading shipping containers at port" fill
@@ -54,7 +54,7 @@ export default function Features() {
           {/* Card 3 — We handle customs — bg #FFFAF9 */}
           <div className="relative flex flex-col gap-8 overflow-hidden rounded-3xl bg-[#FFFAF9] px-8 pt-8 lg:h-[640px] lg:gap-0 lg:rounded-[40px] lg:px-0 lg:pt-0">
             <div className={`${cardTextCls} lg:px-[52px] lg:pt-[48px]`}>
-              <p className={titleCls}>We handle customs for you</p>
+              <p className={titleCls}>Customs handled for you</p>
               <p className={bodyCls}>{"No need to visit the port or deal with customs yourself. Just send us your receipt and product images, and we'll handle Nigerian customs clearance for you."}</p>
             </div>
             <div className={`${imgWrapMobile} ${imgWrapDesktop}`}>

@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: 'How long does shipping from China to Nigeria take?',
-    a: 'The clearing process typically takes 30–40 days, provided all required documents are complete and accurate. Trader Logistic and Clearing manages the entire process efficiently to minimize delays and ensure smooth cargo release.',
+    a: 'The clearing process typically takes 45–50 days, provided all required documents are complete and accurate. Trader Logistic and Clearing manages the entire process efficiently to minimize delays and ensure smooth cargo release.',
   },
   {
     q: 'What documents do I need to provide?',
@@ -34,7 +34,7 @@ const faqs = [
     q: 'How much does it cost to ship from China to Nigeria?',
     a: (
       <>
-        <p className="mb-[8px]">Shipping from China to Nigeria typically costs $330 per 1 CBM (cubic meter).</p>
+        <p className="mb-[8px]">Shipping from China to Nigeria typically costs $350 per 1 CBM (cubic meter).</p>
         <p>Trader Logistic and Clearing ensures transparent pricing with no hidden charges.</p>
       </>
     ),

@@ -26,12 +26,12 @@ const aeonik = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'Cargoport — Ship smarter from China to Nigeria',
-  description: 'Join thousands of businesses shipping goods from China to Nigeria with Cargoport. Track shipments, manage documents, and pay securely.',
-  keywords: ['shipping', 'China', 'Nigeria', 'logistics', 'freight', 'cargoport'],
+  title: 'Trader — Ship smarter from China to Nigeria',
+  description: 'Join thousands of businesses shipping goods from China to Nigeria with Trader. Track shipments, manage documents, and pay securely.',
+  keywords: ['shipping', 'China', 'Nigeria', 'logistics', 'freight', 'trader'],
   openGraph: {
-    title: 'Cargoport — Ship smarter from China to Nigeria',
-    description: 'Join thousands of businesses shipping goods from China to Nigeria with Cargoport.',
+    title: 'Trader — Ship smarter from China to Nigeria',
+    description: 'Join thousands of businesses shipping goods from China to Nigeria with Trader.',
     type: 'website',
   },
 }

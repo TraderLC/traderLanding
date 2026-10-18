@@ -3,13 +3,14 @@
 // Desktop: px-[100px] py-[100px], form p-[48px] gap-[48px], heading 32px, image h-846.
 
 import Image from 'next/image'
+import QuoteWarehouseCard from './QuoteWarehouseCard'
 
 const inputBase = 'w-full rounded-[8px] border border-[#E5E7EB] bg-[#F8F8F9] h-[52px] flex items-center px-[16px] font-harmony text-[14px] leading-[20px] text-primary-dark placeholder:text-[#6B7280] outline-none focus:border-secondary'
 const labelBase = 'font-harmony text-[16px] font-medium leading-[24px] text-[#1C1C1C]'
 
 const slugify = (label: string) => label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
 
-function SelectField({ label, placeholder }: { label: string; placeholder: string }) {
+function SelectField({ label, placeholder, options = [] }: { label: string; placeholder: string; options?: string[] }) {
   const id = `field-${slugify(label)}`
   return (
     <div className="flex flex-col gap-[8px]">
@@ -17,6 +18,9 @@ function SelectField({ label, placeholder }: { label: string; placeholder: strin
       <div className="relative">
         <select id={id} defaultValue="" className={`${inputBase} appearance-none pr-[44px] cursor-pointer bg-[#F8F8F9]`}>
           <option value="" disabled className="text-[#6B7280]">{placeholder}</option>
+          {options.map((opt) => (
+            <option key={opt} value={opt} className="text-primary-dark">{opt}</option>
+          ))}
         </select>
         <div className="pointer-events-none absolute right-[16px] top-1/2 -translate-y-1/2 size-[20px]">
           <Image src="/quote/chevron.svg" alt="" width={20} height={20} className="h-full w-full" />
@@ -56,12 +60,10 @@ export default function Pricing() {
 
               {/* Fields */}
               <div className="flex flex-col gap-[24px]">
+                {/* Fixed China warehouse — customers ship their goods here */}
+                <QuoteWarehouseCard />
                 <div className="flex flex-col gap-[24px]">
-                  <SelectField label="Pick up (China Supplier City)" placeholder="--select city--" />
-                  <TextField label="Pickup Full Address" placeholder="Enter full address" />
-                </div>
-                <div className="flex flex-col gap-[24px]">
-                  <SelectField label="Destination (Nigeria)" placeholder="--select city--" />
+                  <SelectField label="Destination (Nigeria)" placeholder="--select city--" options={["Lagos", "Abuja", "Port Harcourt", "Kano", "Onitsha", "Aba", "Ibadan", "Benin City"]} />
                   <TextField label="Destination Full Address" placeholder="Enter full address" />
                 </div>
                 <TextField label="Item (cbm)" placeholder="Enter cbm" />
@@ -90,7 +92,7 @@ export default function Pricing() {
               className="font-aeonik absolute font-bold text-primary"
               style={{ top: '7.43%', left: '35.98%', fontSize: '21.862px', lineHeight: '1.1', whiteSpace: 'nowrap' }}
             >
-              Trader LC
+              Trader
             </span>
           </div>
 
