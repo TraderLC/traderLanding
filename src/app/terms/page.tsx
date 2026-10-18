@@ -202,8 +202,8 @@ const sections: LegalSection[] = [
     blocks: [
       'Trader Logistics and Clearing Limited',
       'Address: No 5 Igboukwu Cresent, Coker',
-      'Email: Traderlogisticsclearing@gmail.com',
-      'Phone: 08038277977',
+      'Email: hello@traderlc.com',
+      'Phone: 2348038277977',
     ],
   },
 ]

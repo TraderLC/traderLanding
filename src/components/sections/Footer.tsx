@@ -10,11 +10,11 @@ const companyLinks: LinkItem[] = [
   { label: 'About us', href: '/about' },
   { label: 'How it works', href: '/#how-it-works' },
   { label: 'FAQs', href: '/about#faq' },
-  { label: 'Contact us', href: 'mailto:info@traderlc.com' },
+  { label: 'Contact us', href: 'mailto:hello@traderlc.com' },
 ]
 const contactLinks: LinkItem[] = [
-  { label: '+234 800 000 0000', href: 'tel:+2348000000000' },
-  { label: 'info@traderlc.com', href: 'mailto:info@traderlc.com' },
+  { label: '+2348038277977', href: 'tel:+2348038277977' },
+  { label: 'hello@traderlc.com', href: 'mailto:hello@traderlc.com' },
 ]
 const legalLinks: LinkItem[] = [
   { label: 'Privacy Policy', href: '/privacy' },
@@ -96,7 +96,7 @@ export default function Footer() {
                 <Column heading="Contact Us" items={contactLinks} />
               </div>
               <p className="font-harmony text-center text-[16px] font-medium leading-[24px] text-[#051D33]">
-                © 2025 Trader. All rights reserved.
+                © 2025 Traderlc. All rights reserved.
               </p>
             </div>
 
@@ -107,7 +107,7 @@ export default function Footer() {
               <Column heading="Legal" items={legalLinks} />
             </div>
             <p className="font-harmony hidden text-center text-[18px] font-medium leading-[32px] text-[#051D33] lg:block lg:absolute lg:bottom-[40px] lg:inset-x-0">
-              © 2025 Trader. All rights reserved.
+              © 2025 Traderlc. All rights reserved.
             </p>
 
           </div>

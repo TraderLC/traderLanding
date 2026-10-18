@@ -38,7 +38,7 @@ export default function Hero() {
                 {' smarter from China to Nigeria.'}
               </h1>
               <p className="font-harmony text-[16px] font-medium leading-[24px] text-[#152531] lg:w-[519px] lg:text-[18px] lg:leading-[32px]">
-                {'We handle everything from pickup to delivery, with real-time tracking and flexible payments, including '}
+                {'We handle everything from shipping to delivery, with real-time tracking and flexible payments, including '}
                 <span className="font-black italic text-secondary">stablecoins</span>.
               </p>
             </div>
@@ -46,7 +46,7 @@ export default function Hero() {
             {/* Buttons — stacked full-width on mobile, side-by-side on desktop */}
             <div className="flex w-full flex-col items-stretch gap-[20px] lg:h-[48px] lg:w-auto lg:flex-row lg:items-start lg:gap-[16px]">
               <a
-                href="#"
+                href={process.env.NEXT_PUBLIC_APP_URL || '#'}
                 className="font-harmony flex items-center justify-center rounded-[8px] bg-primary px-[40px] py-[12px] text-[16px] font-medium leading-[24px] text-white transition-colors hover:bg-primary-dark"
               >
                 Start Shipping
