@@ -52,7 +52,9 @@ export default function Hero() {
                 Start Shipping
               </a>
               <a
-                href="#"
+                href="https://play.google.com/store/apps/details?id=com.traderlc.cargoport"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-harmony flex items-center justify-center rounded-[8px] bg-primary-light px-[40px] py-[12px] text-[16px] font-medium leading-[24px] text-primary transition-colors hover:bg-[#e9eef1]"
               >
                 Get the app

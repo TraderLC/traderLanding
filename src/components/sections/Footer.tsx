@@ -76,7 +76,7 @@ export default function Footer() {
                 <a href="#" className="font-harmony flex h-[56px] w-full items-center justify-center rounded-[8px] bg-primary-light px-[40px] py-[12px] text-[16px] font-medium leading-[24px] text-primary transition-colors hover:bg-[#e9eef1]">
                   Get Started
                 </a>
-                <a href="#" className="font-harmony flex h-[56px] w-full items-center justify-center rounded-[8px] bg-secondary-muted px-[24px] py-[12px] text-[16px] font-medium leading-[24px] text-[#051D33] transition-colors hover:bg-[#c9e4ff]">
+                <a href="https://play.google.com/store/apps/details?id=com.traderlc.cargoport" target="_blank" rel="noopener noreferrer" className="font-harmony flex h-[56px] w-full items-center justify-center rounded-[8px] bg-secondary-muted px-[24px] py-[12px] text-[16px] font-medium leading-[24px] text-[#051D33] transition-colors hover:bg-[#c9e4ff]">
                   Download the app
                 </a>
               </div>

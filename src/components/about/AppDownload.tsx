@@ -23,7 +23,9 @@ export default function AppDownload() {
 
           {/* CTA — desktop only */}
           <a
-            href="#"
+            href="https://play.google.com/store/apps/details?id=com.traderlc.cargoport"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden font-harmony h-[56px] w-[260px] items-center justify-center rounded-[8px] bg-secondary px-[40px] text-[16px] font-bold leading-[24px] text-white transition-colors hover:bg-[#0d7ce0] lg:flex"
           >
             Get the App
