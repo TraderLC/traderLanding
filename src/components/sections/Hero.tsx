@@ -3,6 +3,7 @@
 // Background: faint #F5F7F8 curved lines (Group 583:17632), rotate 14.58°, anchored to the frame.
 // Mobile — Figma node 764:8253 — 20px gutters, buttons stacked full-width, image radius 20.
 import Image from 'next/image'
+import GetAppButton from '../GetAppButton'
 
 export default function Hero() {
   return (
@@ -51,12 +52,9 @@ export default function Hero() {
               >
                 Start Shipping
               </a>
-              <a
-                href="#"
-                className="font-harmony flex items-center justify-center rounded-[8px] bg-primary-light px-[40px] py-[12px] text-[16px] font-medium leading-[24px] text-primary transition-colors hover:bg-[#e9eef1]"
-              >
+              <GetAppButton className="font-harmony flex items-center justify-center rounded-[8px] bg-primary-light px-[40px] py-[12px] text-[16px] font-medium leading-[24px] text-primary transition-colors hover:bg-[#e9eef1]">
                 Get the app
-              </a>
+              </GetAppButton>
             </div>
           </div>
 
