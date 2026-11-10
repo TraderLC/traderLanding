@@ -3,6 +3,7 @@
 // Mobile photos: horizontal strip pl-5, 253/191/158px wide × 238px tall, gap-[10px], overflows right.
 // Desktop: CTA visible, heading 48px, photos row h-[475px].
 import Image from 'next/image'
+import GetAppButton from '../GetAppButton'
 
 export default function AppDownload() {
   return (
@@ -22,14 +23,9 @@ export default function AppDownload() {
           </div>
 
           {/* CTA — desktop only */}
-          <a
-            href="https://play.google.com/store/apps/details?id=com.traderlc.cargoport"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden font-harmony h-[56px] w-[260px] items-center justify-center rounded-[8px] bg-secondary px-[40px] text-[16px] font-bold leading-[24px] text-white transition-colors hover:bg-[#0d7ce0] lg:flex"
-          >
+          <GetAppButton className="hidden font-harmony h-[56px] w-[260px] items-center justify-center rounded-[8px] bg-secondary px-[40px] text-[16px] font-bold leading-[24px] text-white transition-colors hover:bg-[#0d7ce0] lg:flex">
             Get the App
-          </a>
+          </GetAppButton>
         </div>
 
         {/* Desktop photo row */}

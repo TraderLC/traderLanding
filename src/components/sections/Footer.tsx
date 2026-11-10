@@ -3,6 +3,7 @@
 // Mobile links: Company+Legal row → Contact Us below; headings 18px harmony; links 14px; copyright 16px.
 import Link from 'next/link'
 import Image from 'next/image'
+import GetAppButton from '../GetAppButton'
 
 type LinkItem = { label: string; href: string }
 
@@ -76,9 +77,9 @@ export default function Footer() {
                 <a href="#" className="font-harmony flex h-[56px] w-full items-center justify-center rounded-[8px] bg-primary-light px-[40px] py-[12px] text-[16px] font-medium leading-[24px] text-primary transition-colors hover:bg-[#e9eef1]">
                   Get Started
                 </a>
-                <a href="https://play.google.com/store/apps/details?id=com.traderlc.cargoport" target="_blank" rel="noopener noreferrer" className="font-harmony flex h-[56px] w-full items-center justify-center rounded-[8px] bg-secondary-muted px-[24px] py-[12px] text-[16px] font-medium leading-[24px] text-[#051D33] transition-colors hover:bg-[#c9e4ff]">
+                <GetAppButton className="font-harmony flex h-[56px] w-full items-center justify-center rounded-[8px] bg-secondary-muted px-[24px] py-[12px] text-[16px] font-medium leading-[24px] text-[#051D33] transition-colors hover:bg-[#c9e4ff]">
                   Download the app
-                </a>
+                </GetAppButton>
               </div>
             </div>
           </div>
