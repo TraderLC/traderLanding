@@ -4,6 +4,7 @@
 
 import Image from 'next/image'
 import QuoteWarehouseCard from './QuoteWarehouseCard'
+import { APP_URL } from '@/lib/links'
 
 const inputBase = 'w-full rounded-[8px] border border-[#E5E7EB] bg-[#F8F8F9] h-[52px] flex items-center px-[16px] font-harmony text-[14px] leading-[20px] text-primary-dark placeholder:text-[#6B7280] outline-none focus:border-secondary'
 const labelBase = 'font-harmony text-[16px] font-medium leading-[24px] text-[#1C1C1C]'
@@ -70,12 +71,12 @@ export default function Pricing() {
               </div>
 
               {/* CTA */}
-              <button
-                type="button"
-                className="font-harmony h-[56px] w-full rounded-[8px] bg-secondary px-[40px] text-[16px] font-medium leading-[24px] text-white transition-colors hover:bg-[#0d7ce0]"
+              <a
+                href={APP_URL}
+                className="font-harmony flex h-[56px] w-full items-center justify-center rounded-[8px] bg-secondary px-[40px] text-[16px] font-medium leading-[24px] text-white transition-colors hover:bg-[#0d7ce0]"
               >
                 Start Shipping
-              </button>
+              </a>
             </div>
           </div>
 

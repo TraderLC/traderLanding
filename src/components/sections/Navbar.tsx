@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { APP_URL } from '@/lib/links'
 
 const links = [
   { label: 'About us',     href: '/about' },
@@ -47,7 +48,7 @@ export default function Navbar() {
             className="font-harmony text-[16px] leading-6 font-medium text-secondary hover:text-[#0d7ce0] transition-colors whitespace-nowrap">
             Get Quote
           </Link>
-          <a href={process.env.NEXT_PUBLIC_APP_URL || '#'}
+          <a href={APP_URL}
             className="font-harmony bg-secondary hover:bg-secondary/90 text-secondary-muted text-[16px] leading-6 font-medium px-4 py-2 rounded-lg transition-colors whitespace-nowrap">
             Start Shipping
           </a>
@@ -79,7 +80,7 @@ export default function Navbar() {
             <Link href="/about#contact" className="font-harmony text-base font-medium text-secondary text-center py-2">
               Get Quote
             </Link>
-            <a href={process.env.NEXT_PUBLIC_APP_URL || '#'}
+            <a href={APP_URL}
               className="font-harmony text-base font-medium text-secondary-muted bg-secondary text-center py-2.5 rounded-lg">
               Start Shipping
             </a>
