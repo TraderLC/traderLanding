@@ -4,6 +4,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import GetAppButton from '../GetAppButton'
+import { APP_URL } from '@/lib/links'
 
 type LinkItem = { label: string; href: string }
 
@@ -74,7 +75,7 @@ export default function Footer() {
               </div>
 
               <div className="flex flex-col gap-[20px]">
-                <a href="#" className="font-harmony flex h-[56px] w-full items-center justify-center rounded-[8px] bg-primary-light px-[40px] py-[12px] text-[16px] font-medium leading-[24px] text-primary transition-colors hover:bg-[#e9eef1]">
+                <a href={APP_URL} className="font-harmony flex h-[56px] w-full items-center justify-center rounded-[8px] bg-primary-light px-[40px] py-[12px] text-[16px] font-medium leading-[24px] text-primary transition-colors hover:bg-[#e9eef1]">
                   Get Started
                 </a>
                 <GetAppButton className="font-harmony flex h-[56px] w-full items-center justify-center rounded-[8px] bg-secondary-muted px-[24px] py-[12px] text-[16px] font-medium leading-[24px] text-[#051D33] transition-colors hover:bg-[#c9e4ff]">
